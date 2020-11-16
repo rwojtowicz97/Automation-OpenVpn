@@ -1,0 +1,106 @@
+#!/usr/bin/python3
+import os
+import sys
+import socket
+
+
+hosts = []
+ports = []
+ip_tables = []
+routes = []
+one_port_entry = '$IPTABLES -A forward_vpn -s $VPNUSERNET -d ADRESIP -p tcp --dport PORTS -j ACCEPT ## HOSTNAME\n'
+multi_port_entry = '$IPTABLES -A forward_vpn -s $VPNUSERNET -d ADRESIP -p tcp -m multiport --dports PORTS -j ACCEPT ## HOSTNAME\n'
+route_entry = 'push "route ADRESIP 255.255.255.255" ## HOSTNAME'
+
+
+firewall = open("firewall", "r")
+firewall_list = firewall.readlines()
+firewall.close()
+
+
+
+def split_hosts_and_ports(argvInput):
+    for x in argvInput:
+        data = x.split(':')
+        hosts.append(data[0])
+        ports.append(data[1])
+
+
+def change_ip_to_hostname(hosts):
+    for index, item in enumerate(hosts):
+        if item[0].isdigit():
+            hostname = socket.gethostbyaddr(item)
+            hosts[index] = hostname[0]
+
+
+def make_one_port_entry(ipv4, hostname, port):
+    ip_table = one_port_entry.replace('ADRESIP', ipv4)
+    ip_table = ip_table.replace('PORTS', port)
+    ip_table = ip_table.replace('HOSTNAME', hostname)
+    ip_tables.append(ip_table)
+    route = route_entry.replace('ADRESIP', ipv4)
+    route = route.replace('HOSTNAME', hostname)
+    routes.append(route)
+
+
+def make_multi_port_entry(ipv4, hostname, ports):
+    ip_table = multi_port_entry.replace('ADRESIP', ipv4)
+    ip_table = ip_table.replace('PORTS', ports)
+    ip_table = ip_table.replace('HOSTNAME', hostname)
+    ip_tables.append(ip_table)
+    route = route_entry.replace('ADRESIP', ipv4)
+    route = route.replace('HOSTNAME', hostname)
+    routes.append(route)
+
+def print_ip_tables():
+    for x in ip_tables:
+        print(x)
+
+def print_routes():
+    for x in ports:
+        print(x)
+
+
+def find_user_in_firewall(firewall_list, ip_tables):
+    for i, v in enumerate(firewall_list):
+        if v.find(user) != -1:
+            print(f'index: {i} text: {v}')
+            firewall_list.insert(i+2, iptable)
+            break
+
+
+def save_changes():
+    firewall = open("firewall", "w")
+    new_file_contents = "".join(firewall_list)
+
+    firewall.write(new_file_contents)
+    firewall.close()
+
+
+argvInput = sys.argv[2:]
+print(argvInput)
+user = sys.argv[1]
+split_hosts_and_ports(argvInput)
+
+
+print(hosts)
+print(ports)
+
+change_ip_to_hostname(hosts)
+print(hosts)
+
+for index in range((len(hosts))):
+    ip_address = socket.gethostbyname(hosts[index])
+    if ',' in ports[index]:
+        make_multi_port_entry(ip_address, hosts[index], ports[index])
+    else:
+        make_one_port_entry(ip_address, hosts[index], ports[index]) 
+
+
+
+
+print_ip_tables()
+print_routes()
+
+
+exit(1)

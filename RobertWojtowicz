@@ -1,0 +1,126 @@
+push "route 10.3.59.175 255.255.255.255" ## rta.domodi.pl
+push "route 10.35.0.173 255.255.255.255" ## adv.debug.wp.pl
+push "route 10.35.0.173 255.255.255.255" ## adv.debug.wp.pl
+push "route 10.64.37.242 255.255.255.255" ## fswro
+push "route 193.17.41.203 255.255.255.255" ## admin.parenting.pl
+push "route 193.222.135.10 255.255.255.255" ## admin.abczdrowie.pl
+push "route 10.35.0.170 255.255.255.255" ## nginx.pako.dc-2.lb.dcwp.pl
+push "route 10.0.172.1 255.255.255.255" ## hurtownia
+push "route 212.77.99.92 255.255.255.255" ## redmine.grupawakacje.pl
+push "route 212.77.99.73 255.255.255.255" ## ino.grupawakacje.pl
+push "route 194.0.171.128 255.255.255.128" ## SERVICE-13641
+push "route 10.10.5.30 255.255.255.255" ## helpdesk.int.wp-sa.pl
+push "route 10.10.5.42 255.255.255.255" ## intranet.wp-sa.pl
+push "route 10.10.5.34 255.255.255.255" ## spiid.int.wp-sa.pl
+push "route 10.10.5.40 255.255.255.255" ## dokuwiki.grupawp.pl
+push "route 10.10.5.51 255.255.255.255" ## stat.int.wp-sa.pl
+push "route 10.10.5.59 255.255.255.255" ## atomlista.int.wp-sa.pl
+push "route 10.10.5.194 255.255.255.255" ## sg.int.wp-sa.pl
+push "route 10.32.51.1 255.255.255.255" ## zeus.grupawp.pl
+push "route 10.10.5.94 255.255.255.255" ## hronline.grupawp.pl
+push "route 10.35.0.27 255.255.255.255" ## trend24.grupawp.pl
+push "route 10.35.0.13 255.255.255.255" ## cas
+push "route 10.0.19.0 255.255.255.0" ## cloud dev- maszyny
+push "route 10.32.64.0 255.255.252.0" ## cloud dev- nowa adresacja
+push "route 10.10.5.192 255.255.255.255" ## jira.int.wp-sa.pl
+push "route 10.35.0.12 255.255.255.255" ## NCR
+push "route 10.10.14.8 255.255.255.255" ## hr4u.grupawp.pl
+push "route 10.32.51.19 255.255.255.255" ## confluence.grupawp.pl
+push "route 10.32.59.7 255.255.255.255" ## production-liveblog-backend-api-api-ext.nginx.pako.dc-2.lb.dcwp.pl
+push "route 10.3.35.94 255.255.255.255" ## cas1
+push "route 10.35.0.47 255.255.255.255" ## cas2
+push "route 10.32.51.21 255.255.255.255" ## rtfm.admin.srv
+
+push "route 10.35.0.53 255.255.255.255" ## cas3
+push "route 10.10.14.3 255.255.255.255" ## k2-db.ad.wp-sa.pl
+push "route 10.3.35.122 255.255.255.255" ## cr.dc-1.grupawp.pl
+push "route 10.35.0.63 255.255.255.255" ## staging-pako-antyadblock Z311010
+push "route 10.32.49.54 255.255.255.255" ## cms money
+push "route 10.35.0.68 255.255.255.255" ## pushpanel.services.dc-2.grupawp.pl
+push "route 10.3.56.10 255.255.255.255" ## pushapi-app-ext.nginx.services.dc-1.lb.dcwp.pl
+push "route 10.35.0.156 255.255.255.255" # nginx.services.dc-2.lb.dcwp.pl
+push "route 10.32.59.32 255.255.255.255" ## messagebroker-app-ext.nginx.cr.dc-2.lb.dcwp.pl
+push "route 10.32.35.140 255.255.255.255" ## sg.int stat.int
+push "route 10.32.51.11 255.255.255.255" ## jira.grupawp.pl
+push "route 10.35.0.109 255.255.255.255" ## beta.intranet.grupawp.pl
+push "route 193.222.135.101 255.255.255.255" ## panel.videostar.pl
+push "route 10.35.0.159 255.255.255.255" ## wptv4admin-app-node.nginx.services.dc-2.lb.dcwp.pl
+push "route 10.5.0.11 255.255.255.255" ## panel.videostar.pl
+
+push "route 10.35.0.210 255.255.255.255" ##  jira.dc-2.lb.dcwp.pl
+push "route 10.5.0.50 255.255.255.255" ## cas-1.grupawp.pl
+push "route 193.17.41.169 255.255.255.255" # backend.pudelek.pl
+
+push "route 10.35.1.5 255.255.255.255" ## atomlista.grupawp.pl
+push "route 10.32.37.63 255.255.255.255" ## jira.dc-2.dev.dcwp.pl
+push "route 10.0.172.26 255.255.255.255" ## powerbi.grupawp.pl
+
+push "route 10.31.31.150 255.255.255.255" ## fs-1-waw
+push "route 193.17.41.251 255.255.255.255" ## beckend.pudelek.pl
+push "route 212.77.100.106 255.255.255.255" ## alladyn.wp-sa.pl
+push "route 10.35.1.3 255.255.255.255" ## nexus-rm.grupawp.pl
+push "route 10.0.172.26 255.255.255.255" ##PowerBI report Server
+push "route 212.77.100.84 255.255.255.255" ## pixel.wp.pl
+
+push "route 10.59.2.150 255.255.255.255" ## fs-1-gda
+push "route 10.35.1.6 255.255.255.255" ## ehr.grupawp.pl
+push "route 10.35.1.84 255.255.255.255" ## moderator.dc-2.lb.dcwp.pl
+push "route 10.35.0.158 255.255.255.255" ## nginx.wp.dc-2.lb.dcwp.pl
+push "route 10.35.1.125 255.255.255.255" ## n2cr-data-module-api.grupawp.pl
+push "route 10.31.31.150 255.255.255.255" ## fs-1-waw
+
+push "route 10.59.72.157 255.255.255.255" ## cas
+push "route 10.35.1.127 255.255.255.255" ## siteparser.grupawp.pl
+push "route 10.35.1.120 255.255.255.255" ## n2cr-editor.dc-2.lb.dcwp.pl
+push "route 10.35.1.78 255.255.255.255" ## filerepo.grupawp.pl
+push "route 10.35.1.59 255.255.255.255" ## kibana-n2cr-dc2.grupawp.pl
+push "route 10.35.0.176 255.255.255.255" ## naire.grupawp.pl
+push "route 10.32.48.22 255.255.255.255" ## nfs-loader
+push "route 10.35.1.128 255.255.255.255" ## tableau.grupawp.pl
+push "route 10.35.0.157 255.255.255.255" ## szwadron-ma.grupawp.pl
+push "route 10.35.0.137 255.255.255.255" ## cas-ma-2.grupawp.pl
+push "route 10.3.76.14 255.255.255.255" ## money-dev1.mny
+
+push "route 10.32.92.0 255.255.252.0" ## newcloud.dev
+push "route 10.35.1.129 255.255.255.255" ## manageiq.grupawp.pl
+push "route 10.35.0.233 255.255.255.255" ## ro.cr.dc-2.lb.dcwp.pl
+push "route 212.77.105.250 255.255.255.255" ## bp.grupawp.pl
+push "route 10.35.0.146 255.255.255.255" ## cas.hosting
+push "route 10.35.1.24 255.255.255.255" ## u.grupawp.pl
+push "route 10.35.1.173 255.255.255.255" ## filerepo
+push "route 10.35.1.174 255.255.255.255" ## filerepo
+push "route 10.5.0.69 255.255.255.255" ## generator-dziel.grupawp.pl
+push "route 10.35.0.112 255.255.255.255" ## swiv.grupawp.pl
+push "route 10.10.5.241 255.255.255.255" ## domena koronawirus
+push "route 10.31.72.241 255.255.255.255" ## domena koronawirus
+push "route 10.10.129.241 255.255.255.255" ## domena koronawirus
+push "route 10.10.129.100 255.255.255.255" ## domena koronawirus
+push "route 10.31.72.242 255.255.255.255" ## domena koronawirus
+push "route 10.59.72.241 255.255.255.255" ## domena koronawirus
+push "route 10.59.72.242 255.255.255.255" ## domena koronawirus
+push "route 10.35.1.2 255.255.255.255" ## sds.dc-2.lb.dcwp.pl
+push "route 10.5.0.8 255.255.255.255" ## sds.dc-1.lb.dcwp.pl
+push "route 10.32.37.48 255.255.255.255" ## bazy danych zalozone przez naire.grupawp.pl
+push "route 10.35.0.176 255.255.255.255" ## naire.grupawp.pl
+push "route 10.35.1.186 255.255.255.255" ## hades
+push "route 10.35.1.187 255.255.255.255" ## hades
+push "route 10.35.1.198 255.255.255.255" ## pass.grupawp.pl
+push "route 10.32.92.0 255.255.224.0" ## newcloud.dev
+push "route 10.35.1.206 255.255.255.255" ## extrapanel.grupawp.pl
+push "route 10.5.0.208 255.255.255.255" ## ipa.int.dc-1.lb.dcwp.pl
+push "route 10.35.1.208 255.255.255.255" ## ipa.int.dc-2.lb.dcwp.pl
+push "route 10.7.0.208 255.255.255.255" ## ipa.int.dc-3.lb.dcwp.pl
+push "route 10.3.48.16 255.255.255.248" ## OPROZ-1117
+push "route 10.32.54.16 255.255.255.248" ## OPROZ-1117
+push "route 10.96.67.16 255.255.255.248" ## OPROZ-1117
+push "route 10.3.35.68 255.255.255.255" ## sentry-1.dc-1.tools.dcwp.pl
+push "route 10.10.5.233 255.255.255.255" ## fsecure-new.ad.wp-sa.pl
+push "route 10.35.1.113 255.255.255.255" ## dynacrems-panel.dc-2.lb.dcwp.pl
+push "route 10.64.37.242 255.255.255.255" ## fswro
+push "route 10.5.0.127 255.255.255.255" ## ro.cr.dc-1.lb.dcwp.pl
+push "route 193.222.135.14 255.255.255.255" ## www.extradom.pl
+push "route 10.32.37.63 255.255.255.255" ## jira.dc-2.dev.dcwp.pl
+push "route 10.35.1.64 255.255.255.255" ## n2cr-siteparser.grupawp.pl
+push "route 10.35.1.185 255.255.255.255" ## beta-filerepo.dc-2.lb.dcwp.pl
+push "route 10.35.1.17 255.255.255.255" ## gamma-filerepo.dc-2.lb.dcwp.pl
+push "route 212.77.99.104 255.255.255.255" ## panel.wakacje.pl
