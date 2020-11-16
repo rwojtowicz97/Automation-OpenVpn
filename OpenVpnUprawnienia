@@ -10,13 +10,19 @@ ip_tables = []
 routes = []
 one_port_entry = '$IPTABLES -A forward_vpn -s $VPNUSERNET -d ADRESIP -p tcp --dport PORTS -j ACCEPT ## HOSTNAME\n'
 multi_port_entry = '$IPTABLES -A forward_vpn -s $VPNUSERNET -d ADRESIP -p tcp -m multiport --dports PORTS -j ACCEPT ## HOSTNAME\n'
-route_entry = 'push "route ADRESIP 255.255.255.255" ## HOSTNAME'
+route_entry = 'push "route ADRESIP 255.255.255.255" ## HOSTNAME\n'
 
 
-firewall = open("firewall", "r")
+argvInput = sys.argv[2:]
+user = sys.argv[1]
+
+if os.path.exists(f'/etc/openvpn/ccd/{user}') == False:
+    sys.exit('ccd file doesn\'t exists')
+    
+
+firewall = open("/etc/rc.d/firewall", "r")
 firewall_list = firewall.readlines()
 firewall.close()
-
 
 
 def split_hosts_and_ports(argvInput):
@@ -52,24 +58,17 @@ def make_multi_port_entry(ipv4, hostname, ports):
     route = route.replace('HOSTNAME', hostname)
     routes.append(route)
 
-def print_ip_tables():
-    for x in ip_tables:
-        print(x)
 
-def print_routes():
-    for x in ports:
-        print(x)
-
-
-def find_user_in_firewall(firewall_list, ip_tables):
+def find_user_in_firewall():
     for i, v in enumerate(firewall_list):
         if v.find(user) != -1:
-            print(f'index: {i} text: {v}')
-            firewall_list.insert(i+2, iptable)
+            for ip_table in ip_tables:
+                firewall_list.insert(i+2, ip_table)
+                print()
             break
 
 
-def save_changes():
+def save_changes_in_firewall():
     firewall = open("firewall", "w")
     new_file_contents = "".join(firewall_list)
 
@@ -77,17 +76,9 @@ def save_changes():
     firewall.close()
 
 
-argvInput = sys.argv[2:]
-print(argvInput)
-user = sys.argv[1]
 split_hosts_and_ports(argvInput)
-
-
-print(hosts)
-print(ports)
-
 change_ip_to_hostname(hosts)
-print(hosts)
+
 
 for index in range((len(hosts))):
     ip_address = socket.gethostbyname(hosts[index])
@@ -97,10 +88,11 @@ for index in range((len(hosts))):
         make_one_port_entry(ip_address, hosts[index], ports[index]) 
 
 
+find_user_in_firewall()
+save_changes_in_firewall()
 
 
-print_ip_tables()
-print_routes()
-
-
-exit(1)
+ccd = open(user,"a+")
+for route in routes:
+    ccd.write(route)
+ccd.close()

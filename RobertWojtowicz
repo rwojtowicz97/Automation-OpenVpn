@@ -124,3 +124,7 @@ push "route 10.35.1.64 255.255.255.255" ## n2cr-siteparser.grupawp.pl
 push "route 10.35.1.185 255.255.255.255" ## beta-filerepo.dc-2.lb.dcwp.pl
 push "route 10.35.1.17 255.255.255.255" ## gamma-filerepo.dc-2.lb.dcwp.pl
 push "route 212.77.99.104 255.255.255.255" ## panel.wakacje.pl
+push "route 212.77.98.9 255.255.255.255" ## wp.pl
+push "route 8.8.8.8 255.255.255.255" ## dns.google
+push "route 216.58.215.67 255.255.255.255" ## waw02s16-in-f3.1e100.net
+push "route 213.180.141.140 255.255.255.255" ## onet.pl
