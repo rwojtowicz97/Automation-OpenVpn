@@ -69,7 +69,7 @@ def find_user_in_firewall():
 
 
 def save_changes_in_firewall():
-    firewall = open("firewall", "w")
+    firewall = open("/etc/rc.d/firewall", "w")
     new_file_contents = "".join(firewall_list)
 
     firewall.write(new_file_contents)
