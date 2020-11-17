@@ -4,9 +4,9 @@ Python script that adds **IP TABLES** to firewall and **routes** to ccd file.
 
 # How to use it?
 ```
-./NadajUprawnienia ccdFileName hostnameOrIpAdress:port,port
+./NadajUprawnienia.py ccdFileName hostnameOrIpAdress:port,port
 ```
 **Example:**
 ```
-./NadajUprawnienia RobertWojtowicz wp.pl:80,443 8.8.8.8:80 youtube.com:80,443,3389,4444,8080
+./NadajUprawnienia.py RobertWojtowicz wp.pl:80,443 8.8.8.8:80 youtube.com:80,443,3389,4444,8080
 ```
