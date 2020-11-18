@@ -64,7 +64,6 @@ def find_user_in_firewall():
         if v.find(user) != -1:
             for ip_table in ip_tables:
                 firewall_list.insert(i+2, ip_table)
-                print()
             break
 
 
