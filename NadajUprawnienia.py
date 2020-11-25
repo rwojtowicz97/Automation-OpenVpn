@@ -24,6 +24,9 @@ firewall = open("/etc/rc.d/firewall", "r")
 firewall_list = firewall.readlines()
 firewall.close()
 
+ccd = open(f'{user}',"r")
+ccd_list = ccd.readlines()
+ccd.close()
 
 def split_hosts_and_ports(argvInput):
     for x in argvInput:
@@ -74,6 +77,13 @@ def save_changes_in_firewall():
     firewall.write(new_file_contents)
     firewall.close()
 
+def save_changes_in_ccd():
+    ccd = open(f'/etc/openvpn/ccd{user}', "w")
+    new_ccd_content = "".join(ccd_list)
+
+    ccd.write(new_ccd_content)
+    ccd.close()
+
 
 split_hosts_and_ports(argvInput)
 change_ip_to_hostname(hosts)
@@ -86,12 +96,14 @@ for index in range((len(hosts))):
     else:
         make_one_port_entry(ip_address, hosts[index], ports[index]) 
 
-
 find_user_in_firewall()
 save_changes_in_firewall()
 
 
-ccd = open(user,"a+")
 for route in routes:
-    ccd.write(route)
-ccd.close()
+    ccd_list.insert(0,route)
+
+
+ccd_list = list(dict.fromkeys(ccd_list))
+
+save_changes_in_ccd()
